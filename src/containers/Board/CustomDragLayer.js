@@ -4,7 +4,6 @@ import { DragLayer } from 'react-dnd';
 import CardDragPreview from './CardDragPreview';
 import snapToGrid from './snapToGrid';
 
-
 const layerStyles = {
   position: 'fixed',
   pointerEvents: 'none',
@@ -31,6 +30,7 @@ function getItemStyles(props) {
 
   const transform = `translate(${x}px, ${y}px)`;
   return {
+    transition: 'all 0.15s ease',
     WebkitTransform: transform,
     transform
   };
@@ -76,7 +76,6 @@ export default class CustomDragLayer extends Component {
     if (!isDragging) {
       return null;
     }
-
 
     return (
       <div style={layerStyles}>

@@ -5,7 +5,6 @@ import { getEmptyImage } from 'react-dnd-html5-backend';
 
 import Card from './Card';
 
-
 function getStyles(isDragging) {
   return {
     display: isDragging ? 0.5 : 1

@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import { default as TouchBackend } from 'react-dnd-touch-backend';
 
 import * as ListsActions from '../../actions/lists';
 
@@ -20,7 +21,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-@DragDropContext(HTML5Backend)
+@DragDropContext((('ontouchstart' in window) ? TouchBackend : HTML5Backend))
 export default class Board extends Component {
   static propTypes = {
     getLists: PropTypes.func.isRequired,

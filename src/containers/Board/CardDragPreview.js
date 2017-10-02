@@ -2,9 +2,7 @@ import React, { PropTypes } from 'react';
 import Card from './Cards/Card';
 
 const styles = {
-  display: 'inline-block',
-  transform: 'rotate(-7deg)',
-  WebkitTransform: 'rotate(-7deg)'
+  display: 'inline-block'
 };
 
 const propTypes = {
